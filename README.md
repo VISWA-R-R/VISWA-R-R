@@ -99,5 +99,5 @@ Passionate about Java Backend Development, Spring Boot, Database Management, and
 ## 🐍 Snake Contribution Graph
 
 <p align="center">
-  <img src="![Snake animation](https://github.com/VISWA-R-R/VISWA-R-R/blob/output/github-snake-dark.svg)" />
+  <img src="https://raw.githubusercontent.com/VISWA-R-R/VISWA-R-R/output/github-snake.svg" alt="Snake animation">
 </p>
