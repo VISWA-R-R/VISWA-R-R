@@ -1,101 +1,96 @@
 <h1 align="center">Hi 👋, I'm Viswa R R</h1>
 
-<h3 align="center">Java Developer | Backend Developer | Computer Science Engineering Graduate</h3>
+<h3 align="center">Java Backend Developer | B.Tech CSE Graduate</h3>
 
 <p align="center">
-Passionate about Java Backend Development, Spring Boot, Database Management, and building real-world applications.
+Passionate about Java, Spring Boot, SQL, PostgreSQL, and Backend Development.
 </p>
 
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=VISWA-R-R&label=Profile%20Views&color=0e75b6&style=flat" alt="Profile Views"/>
+<img src="https://komarev.com/ghpvc/?username=VISWA-R-R&label=Profile+Views&color=blue&style=flat" />
 </p>
 
 ---
 
-# 👨‍💻 About Me
+## 👨‍💻 About Me
 
-- 🎓 B.TECH. Computer Science and Engineering Graduate
+- 🎓 B.Tech in Computer Science and Engineering
 - 💻 Java Backend Developer
 - 🌱 Learning Spring Boot, Hibernate & REST APIs
-- 🛢️ Strong in Java, SQL, MySQL & PostgreSQL
-- 🚀 Interested in Backend Development
-- 📫 Email: **viswaoff03@gmail.com**
-- 📍 Gummidipoondi, Tamil Nadu, India
+- 🗄️ Java, SQL, MySQL & PostgreSQL
+- 📍 Tamil Nadu, India
+- 📧 viswaoff03@gmail.com
 
 ---
 
-# 🚀 Tech Stack
+## 🚀 Tech Stack
 
 <p align="center">
 
-<img src="https://skillicons.dev/icons?i=java,spring,hibernate,mysql,postgresql,html,css,js,git,github,vscode,eclipse" />
+<img src="https://skillicons.dev/icons?i=java,spring,hibernate,mysql,postgresql,git,github,html,css,js,vscode,eclipse"/>
 
 </p>
 
 ---
 
-# 📌 Projects
+## 📊 GitHub Statistics
 
-## 🌙 Night Motion Detection and Alert System
+<p align="center">
+<img src="https://github-readme-stats-sigma-five.vercel.app/api?username=VISWA-R-R&show_icons=true&theme=tokyonight" />
+</p>
 
-- IoT-based smart security system using ESP8266 NodeMCU, PIR Sensor, GSM Module, LCD, LED and Buzzer.
-- Detects human motion and sends instant SMS alerts.
+<p align="center">
+  <img src="https://streak-stats.demolab.com?user=VISWA-R-R&theme=tokyonight&hide_border=true" alt="GitHub Streak" />
+</p>
 
-## 🎓 Student Management System
-
-- Java + JDBC + PostgreSQL CRUD Application.
-- Built using Maven with efficient database connectivity.
+<p align="center">
+<img src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=VISWA-R-R&layout=compact&theme=tokyonight" />
+</p>
 
 ---
 
-# 📊 GitHub Stats
+## 📈 Contribution Graph
 
 <p align="center">
 
-
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=VISWA-R-R&theme=tokyonight"/>
-
-
----
-
-# 📈 Contribution Graph
-
-<p align="center">
-
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=VISWA-R-R&theme=github-dark" />
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=VISWA-R-R&theme=tokyo-night"/>
 
 </p>
 
 ---
 
-# 🌐 Connect With Me
+## 🌐 Connect With Me
 
 <p align="center">
 
-<a href="https://github.com/YOUR_GITHUB_USERNAME">
-<img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"/>
+<a href="https://github.com/VISWA-R-R" target="_blank">
+  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"/>
 </a>
 
-<a href="YOUR_LINKEDIN_URL">
-<img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>
+<a href="https://youtube.com/@viswaeditz?si=Tne2St1nUhlJf4qK" target="_blank">
+  <img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white"/>
+</a>
+
+<a href="https://www.instagram.com/viswa_editz_?igsh=aWx5MGUyY3dkZHBl" target="_blank">
+  <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white"/>
 </a>
 
 <a href="mailto:viswaoff03@gmail.com">
-<img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white"/>
 </a>
 
 </p>
-
----
-
-<div align="center">
-
-### 💡 "Code. Learn. Improve. Repeat."
-
-</div>
 
 ---
 
 ## 🐍 Snake Contribution Graph
 
-![Snake animation](https://github.com/VISWA-R-R/VISWA-R-R/blob/output/snake-dark.svg)
+<p align="center">
+
+<img src="https://raw.githubusercontent.com/VISWA-R-R/VISWA-R-R/output/snake-dark.svg"/>
+
+</p>
+
+---
+
+<h3 align="center">⭐ Thanks for visiting my profile ⭐</h3>
