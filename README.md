@@ -40,7 +40,7 @@ Passionate about Java, Spring Boot, SQL, PostgreSQL, and Backend Development.
 </p>
 
 <p align="center">
-  <img src="https://streak-stats.demolab.com?user=VISWA-R-R&theme=tokyonight&hide_border=true" alt="GitHub Streak" />
+  <img src="https://streak-stats.demolab.com?user=VISWA-R-R&theme=tokyonight&hide_border=true" />
 </p>
 
 <p align="center">
