@@ -83,13 +83,12 @@ Passionate about Java, Spring Boot, SQL, PostgreSQL, and Backend Development.
 
 ---
 
-## 🐍 Snake Contribution Graph
+## 🐍 Contribution Snake
 
-<p align="center">
-
-<img src="https://raw.githubusercontent.com/VISWA-R-R/VISWA-R-R/output/snake-dark.svg"/>
-
-</p>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/VISWA-R-R/VISWA-R-R/output/snake-dark.svg">
+  <img alt="GitHub contribution snake" src="https://raw.githubusercontent.com/VISWA-R-R/VISWA-R-R/output/snake.svg">
+</picture>
 
 ---
 
