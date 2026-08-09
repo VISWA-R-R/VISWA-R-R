@@ -37,7 +37,7 @@ Passionate about Java, Spring Boot, SQL, PostgreSQL, and Backend Development.
 
 <p align="center">
   <img
-    src="https://github-readme-stats.vercel.app/api?username=VISWA-R-R&show_icons=true&theme=tokyonight&hide_border=true&count_private=true"
+    src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=VISWA-R-R&theme=tokyonight"
     alt="GitHub Statistics"
   />
 </p>
@@ -51,7 +51,7 @@ Passionate about Java, Spring Boot, SQL, PostgreSQL, and Backend Development.
 
 <p align="center">
   <img
-    src="https://github-readme-stats.vercel.app/api/top-langs/?username=VISWA-R-R&layout=compact&theme=tokyonight&hide_border=true"
+    src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=VISWA-R-R&theme=tokyonight"
     alt="Top Languages"
   />
 </p>
