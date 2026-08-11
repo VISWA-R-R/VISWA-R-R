@@ -2,7 +2,8 @@ name: Update GitHub Statistics
 
 on:
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "30 18 * * *"
+
   workflow_dispatch:
 
 permissions:
@@ -10,281 +11,344 @@ permissions:
 
 jobs:
   update-stats:
+
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Get GitHub statistics
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          curl -s \
-            -H "Authorization: Bearer $GH_TOKEN" \
-            -H "Content-Type: application/json" \
-            -H "X-GitHub-Api-Version: 2022-11-28" \
-            https://api.github.com/graphql \
-            -d '{"query":"query { user(login: \"VISWA-R-R\") { contributionsCollection { contributionCalendar { totalContributions weeks { contributionDays { date contributionCount } } } } } }"}' \
-            > github-data.json
 
-      - name: Generate GitHub Statistics SVG
         run: |
+
           python3 <<'PY'
+
+          import urllib.request
           import json
           from datetime import date, timedelta
 
-          with open("github-data.json") as f:
-              data = json.load(f)
 
-          calendar = data["data"]["user"]["contributionsCollection"]["contributionCalendar"]
+          # GitHub username
+          username = "VISWA-R-R"
 
-          total = calendar["totalContributions"]
 
-          days = []
+          # GraphQL query
+          query = """
+          query($login:String!) {
+            user(login:$login) {
+              contributionsCollection {
+                contributionCalendar {
+                  totalContributions
+                  weeks {
+                    contributionDays {
+                      date
+                      contributionCount
+                    }
+                  }
+                }
+              }
+            }
+          }
+          """
+
+
+          data = json.dumps({
+              "query": query,
+              "variables": {
+                  "login": username
+              }
+          }).encode()
+
+
+          request = urllib.request.Request(
+              "https://api.github.com/graphql",
+              data=data,
+              headers={
+                  "Authorization":
+                      "Bearer " +
+                      __import__("os").environ["GH_TOKEN"],
+
+                  "Content-Type":
+                      "application/json",
+
+                  "X-GitHub-Api-Version":
+                      "2022-11-28"
+              }
+          )
+
+
+          with urllib.request.urlopen(request) as response:
+              result = json.loads(
+                  response.read().decode()
+              )
+
+
+          if "errors" in result:
+
+              print(
+                  json.dumps(
+                      result["errors"],
+                      indent=2
+                  )
+              )
+
+              raise SystemExit(
+                  "GitHub API error"
+              )
+
+
+          user = result["data"]["user"]
+
+
+          if user is None:
+
+              raise SystemExit(
+                  "GitHub user not found"
+              )
+
+
+          calendar = (
+              user[
+                  "contributionsCollection"
+              ][
+                  "contributionCalendar"
+              ]
+          )
+
+
+          total = calendar[
+              "totalContributions"
+          ]
+
+
+          # ----------------------------------
+          # Get contribution days
+          # ----------------------------------
+
+          contribution_days = []
 
           for week in calendar["weeks"]:
-              for d in week["contributionDays"]:
-                  days.append({
-                      "date": d["date"],
-                      "count": d["contributionCount"]
+
+              for day in week[
+                  "contributionDays"
+              ]:
+
+                  contribution_days.append({
+
+                      "date":
+                          day["date"],
+
+                      "count":
+                          day["contributionCount"]
+
                   })
 
-          days.sort(key=lambda x: x["date"])
 
           active_dates = {
-              d["date"] for d in days if d["count"] > 0
+
+              item["date"]
+
+              for item in contribution_days
+
+              if item["count"] > 0
           }
 
+
+          # ----------------------------------
           # Current streak
-          current = 0
-          check = date.today()
+          # ----------------------------------
+
+          today = date.today()
+
+          if today.isoformat() in active_dates:
+
+              check = today
+
+          else:
+
+              check = (
+                  today -
+                  timedelta(days=1)
+              )
+
+
+          current_streak = 0
+
 
           while check.isoformat() in active_dates:
-              current += 1
+
+              current_streak += 1
+
               check -= timedelta(days=1)
 
+
+          # ----------------------------------
           # Longest streak
-          longest = 0
-          streak = 0
+          # ----------------------------------
+
+          longest_streak = 0
+
+          running = 0
+
           previous = None
 
-          for d in days:
-              if d["count"] > 0:
-                  current_date = date.fromisoformat(d["date"])
 
-                  if previous and current_date == previous + timedelta(days=1):
-                      streak += 1
-                  else:
-                      streak = 1
+          for item in contribution_days:
 
-                  longest = max(longest, streak)
-                  previous = current_date
+              if item["count"] == 0:
+                  continue
 
-          # Safe SVG
-          svg = f'''<svg xmlns="http://www.w3.org/2000/svg"
-          width="1000" height="400" viewBox="0 0 1000 400">
 
-          <defs>
-            <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#0f172a"/>
-              <stop offset="50%" stop-color="#172554"/>
-              <stop offset="100%" stop-color="#312e81"/>
-            </linearGradient>
+              current = date.fromisoformat(
+                  item["date"]
+              )
 
-            <linearGradient id="border" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0%" stop-color="#22d3ee"/>
-              <stop offset="50%" stop-color="#818cf8"/>
-              <stop offset="100%" stop-color="#f472b6"/>
-            </linearGradient>
-          </defs>
 
-          <!-- Background -->
-          <rect width="1000" height="400"
-                rx="25"
-                fill="url(#bg)"/>
+              if (
+                  previous is not None
+                  and current ==
+                  previous + timedelta(days=1)
+              ):
 
-          <!-- Border -->
-          <rect x="3" y="3"
-                width="994" height="394"
-                rx="25"
-                fill="none"
-                stroke="url(#border)"
-                stroke-width="4"/>
+                  running += 1
 
-          <!-- Title -->
-          <text x="50" y="60"
-                fill="#ffffff"
-                font-family="Arial"
-                font-size="30"
-                font-weight="bold">
-            Viswa R R
-          </text>
+              else:
 
-          <text x="50" y="88"
-                fill="#94a3b8"
-                font-family="Arial"
-                font-size="16">
-            Java Developer • GitHub Activity
-          </text>
+                  running = 1
 
-          <!-- Line -->
-          <line x1="50" y1="115"
-                x2="950" y2="115"
-                stroke="#334155"
-                stroke-width="2"/>
 
-          <!-- Card 1 -->
-          <rect x="50" y="145"
-                width="270" height="190"
-                rx="20"
-                fill="#111827"
-                stroke="#334155"
-                stroke-width="2"/>
+              longest_streak = max(
+                  longest_streak,
+                  running
+              )
 
-          <circle cx="185" cy="195"
-                  r="38"
-                  fill="none"
-                  stroke="#22d3ee"
-                  stroke-width="5"/>
 
-          <text x="185" y="207"
-                text-anchor="middle"
-                fill="#ffffff"
-                font-family="Arial"
-                font-size="32"
-                font-weight="bold">
-            {total}
-          </text>
+              previous = current
 
-          <text x="185" y="260"
-                text-anchor="middle"
-                fill="#ffffff"
-                font-family="Arial"
-                font-size="17"
-                font-weight="bold">
-            TOTAL CONTRIBUTIONS
-          </text>
 
-          <text x="185" y="290"
-                text-anchor="middle"
-                fill="#22d3ee"
-                font-family="Arial"
-                font-size="14">
-            GITHUB ACTIVITY
-          </text>
+          # ----------------------------------
+          # Create README section
+          # ----------------------------------
 
-          <!-- Card 2 -->
-          <rect x="365" y="145"
-                width="270" height="190"
-                rx="20"
-                fill="#111827"
-                stroke="#334155"
-                stroke-width="2"/>
+          stats = f"""
+          <!-- GITHUB-STATS:START -->
 
-          <circle cx="500" cy="195"
-                  r="38"
-                  fill="#f97316"
-                  opacity="0.15"/>
+          ## 📊 GitHub Statistics
 
-          <text x="500" y="210"
-                text-anchor="middle"
-                fill="#fb923c"
-                font-family="Arial"
-                font-size="35"
-                font-weight="bold">
-            {current}
-          </text>
+          | ⭐ Total Contributions | 🔥 Current Streak | 🏆 Longest Streak |
+          |:---:|:---:|:---:|
+          | **{total}** | **{current_streak} days** | **{longest_streak} days** |
 
-          <text x="500" y="260"
-                text-anchor="middle"
-                fill="#ffffff"
-                font-family="Arial"
-                font-size="17"
-                font-weight="bold">
-            CURRENT STREAK
-          </text>
+          *Automatically updated every day by GitHub Actions.*
 
-          <text x="500" y="290"
-                text-anchor="middle"
-                fill="#fb923c"
-                font-family="Arial"
-                font-size="14">
-            DAYS
-          </text>
+          <!-- GITHUB-STATS:END -->
+          """
 
-          <!-- Card 3 -->
-          <rect x="680" y="145"
-                width="270" height="190"
-                rx="20"
-                fill="#111827"
-                stroke="#334155"
-                stroke-width="2"/>
 
-          <circle cx="815" cy="195"
-                  r="38"
-                  fill="#a78bfa"
-                  opacity="0.15"/>
+          # ----------------------------------
+          # Update README
+          # ----------------------------------
 
-          <text x="815" y="210"
-                text-anchor="middle"
-                fill="#a78bfa"
-                font-family="Arial"
-                font-size="35"
-                font-weight="bold">
-            {longest}
-          </text>
+          readme_file = "README.md"
 
-          <text x="815" y="260"
-                text-anchor="middle"
-                fill="#ffffff"
-                font-family="Arial"
-                font-size="17"
-                font-weight="bold">
-            LONGEST STREAK
-          </text>
 
-          <text x="815" y="290"
-                text-anchor="middle"
-                fill="#a78bfa"
-                font-family="Arial"
-                font-size="14">
-            DAYS
-          </text>
+          with open(
+              readme_file,
+              "r",
+              encoding="utf-8"
+          ) as file:
 
-          <!-- Footer -->
-          <circle cx="55" cy="365"
-                  r="5"
-                  fill="#22c55e"/>
+              readme = file.read()
 
-          <text x="70" y="371"
-                fill="#94a3b8"
-                font-family="Arial"
-                font-size="13">
-            LIVE GITHUB STATISTICS • UPDATED DAILY
-          </text>
 
-          </svg>'''
+          start_marker = (
+              "<!-- GITHUB-STATS:START -->"
+          )
 
-          with open("github-stats.svg", "w") as f:
-              f.write(svg)
+          end_marker = (
+              "<!-- GITHUB-STATS:END -->"
+          )
 
-          print("Statistics generated successfully")
-          print("Total:", total)
-          print("Current streak:", current)
-          print("Longest streak:", longest)
+
+          if (
+              start_marker in readme
+              and
+              end_marker in readme
+          ):
+
+              start = readme.index(
+                  start_marker
+              )
+
+              end = readme.index(
+                  end_marker
+              ) + len(end_marker)
+
+
+              readme = (
+                  readme[:start]
+                  +
+                  stats.strip()
+                  +
+                  readme[end:]
+              )
+
+          else:
+
+              readme += "\n\n" + stats
+
+
+          with open(
+              readme_file,
+              "w",
+              encoding="utf-8"
+          ) as file:
+
+              file.write(readme)
+
+
+          print(
+              "Total Contributions:",
+              total
+          )
+
+          print(
+              "Current Streak:",
+              current_streak
+          )
+
+          print(
+              "Longest Streak:",
+              longest_streak
+          )
+
           PY
+
 
       - name: Commit updated statistics
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add github-stats.svg
+          git config user.name \
+            "github-actions[bot]"
+
+          git config user.email \
+            "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add README.md
 
           if git diff --cached --quiet; then
-            echo "No changes"
+
+            echo "No statistics changes"
+
           else
-            git commit -m "Update GitHub statistics"
+
+            git commit \
+              -m "Update GitHub statistics"
+
             git push
+
           fi
