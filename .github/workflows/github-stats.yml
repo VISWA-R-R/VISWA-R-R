@@ -1,0 +1,224 @@
+name: Update GitHub Statistics
+
+on:
+  schedule:
+    # Runs every day at 00:15 UTC
+    - cron: "15 0 * * *"
+
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-stats:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Get GitHub contribution data
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          curl -L \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H "Content-Type: application/json" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            https://api.github.com/graphql \
+            -d '{"query":"query { user(login: \"VISWA-R-R\") { contributionsCollection { contributionCalendar { totalContributions weeks { contributionDays { contributionCount date } } } } } }"}' \
+            -o github-data.json
+
+      - name: Generate statistics SVG
+        run: |
+          python3 <<'PY'
+          import json
+          from datetime import date, timedelta
+
+          with open("github-data.json", "r") as f:
+              data = json.load(f)
+
+          try:
+              calendar = data["data"]["user"]["contributionsCollection"]["contributionCalendar"]
+          except Exception:
+              print("GitHub API response:")
+              print(json.dumps(data, indent=2))
+              raise SystemExit("Could not read GitHub contribution data.")
+
+          total = calendar["totalContributions"]
+
+          days = []
+
+          for week in calendar["weeks"]:
+              for d in week["contributionDays"]:
+                  days.append({
+                      "date": d["date"],
+                      "count": d["contributionCount"]
+                  })
+
+          days.sort(key=lambda x: x["date"])
+
+          contribution_dates = {
+              d["date"]
+              for d in days
+              if d["count"] > 0
+          }
+
+          # Current streak
+          today = date.today()
+          current = 0
+          check_day = today
+
+          while check_day.isoformat() in contribution_dates:
+              current += 1
+              check_day -= timedelta(days=1)
+
+          # If there is no contribution today, check yesterday.
+          if current == 0:
+              check_day = today - timedelta(days=1)
+
+              while check_day.isoformat() in contribution_dates:
+                  current += 1
+                  check_day -= timedelta(days=1)
+
+          # Longest streak
+          longest = 0
+          streak = 0
+          previous = None
+
+          for d in days:
+              if d["count"] > 0:
+                  current_date = date.fromisoformat(d["date"])
+
+                  if previous is not None and current_date == previous + timedelta(days=1):
+                      streak += 1
+                  else:
+                      streak = 1
+
+                  longest = max(longest, streak)
+                  previous = current_date
+
+          # Create SVG
+          svg = f'''<svg width="900" height="260"
+          xmlns="http://www.w3.org/2000/svg">
+
+          <defs>
+            <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#161b22"/>
+              <stop offset="100%" stop-color="#0d1117"/>
+            </linearGradient>
+          </defs>
+
+          <rect width="900" height="260" rx="20" fill="url(#bg)"/>
+
+          <text x="450" y="45"
+                text-anchor="middle"
+                font-family="Arial"
+                font-size="26"
+                font-weight="bold"
+                fill="#58a6ff">
+            GitHub Statistics
+          </text>
+
+          <line x1="300" y1="75" x2="300" y2="220"
+                stroke="#30363d"/>
+
+          <line x1="600" y1="75" x2="600" y2="220"
+                stroke="#30363d"/>
+
+          <text x="150" y="115"
+                text-anchor="middle"
+                font-family="Arial"
+                font-size="42"
+                font-weight="bold"
+                fill="#ffffff">
+            {total}
+          </text>
+
+          <text x="150" y="150"
+                text-anchor="middle"
+                font-family="Arial"
+                font-size="17"
+                fill="#8b949e">
+            Total Contributions
+          </text>
+
+          <text x="150" y="185"
+                text-anchor="middle"
+                font-family="Arial"
+                font-size="14"
+                fill="#58a6ff">
+            Updated Daily
+          </text>
+
+          <text x="450" y="115"
+                text-anchor="middle"
+                font-family="Arial"
+                font-size="42"
+                font-weight="bold"
+                fill="#ffffff">
+            {current}
+          </text>
+
+          <text x="450" y="150"
+                text-anchor="middle"
+                font-family="Arial"
+                font-size="17"
+                fill="#8b949e">
+            Current Streak
+          </text>
+
+          <text x="450" y="185"
+                text-anchor="middle"
+                font-family="Arial"
+                font-size="14"
+                fill="#58a6ff">
+            Days
+          </text>
+
+          <text x="750" y="115"
+                text-anchor="middle"
+                font-family="Arial"
+                font-size="42"
+                font-weight="bold"
+                fill="#ffffff">
+            {longest}
+          </text>
+
+          <text x="750" y="150"
+                text-anchor="middle"
+                font-family="Arial"
+                font-size="17"
+                fill="#8b949e">
+            Longest Streak
+          </text>
+
+          <text x="750" y="185"
+                text-anchor="middle"
+                font-family="Arial"
+                font-size="14"
+                fill="#58a6ff">
+            Days
+          </text>
+
+          </svg>'''
+
+          with open("github-stats.svg", "w") as f:
+              f.write(svg)
+
+          print("Total contributions:", total)
+          print("Current streak:", current)
+          print("Longest streak:", longest)
+          PY
+
+      - name: Commit updated statistics
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add github-stats.svg
+
+          git diff --cached --quiet || git commit -m "Update GitHub statistics"
+
+          git push
