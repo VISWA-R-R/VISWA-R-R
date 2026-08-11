@@ -37,7 +37,7 @@ Passionate about Java, Spring Boot, SQL, PostgreSQL, and Backend Development.
 
 <!-- ==================== GITHUB STATISTICS ==================== -->
 
-<h2 align="center">📊 GitHub Statistics</h2>
+<h2>📊 GitHub Statistics</h2>
 
 <p align="center">
   <img
@@ -49,7 +49,7 @@ Passionate about Java, Spring Boot, SQL, PostgreSQL, and Backend Development.
 
 <!-- ==================== GITHUB ACTIVITY / STREAK ==================== -->
 
-<h2 align="center">🔥 GitHub Activity</h2>
+<!-- <h2 >🔥 GitHub Activity</h2> -->
 
 <p align="center">
   <img
