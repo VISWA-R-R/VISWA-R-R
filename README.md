@@ -33,26 +33,39 @@ Passionate about Java, Spring Boot, SQL, PostgreSQL, and Backend Development.
 
 ---
 
-## 📊 GitHub Statistics
+
+
+<!-- ==================== GITHUB STATISTICS ==================== -->
+
+<h2 align="center">📊 GitHub Statistics</h2>
 
 <p align="center">
   <img
     src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=VISWA-R-R&theme=tokyonight"
     alt="GitHub Statistics"
+    width="48%"
   />
 </p>
 
+<!-- ==================== GITHUB ACTIVITY / STREAK ==================== -->
+
+<h2 align="center">🔥 GitHub Activity</h2>
+
 <p align="center">
   <img
-    src="https://streak-stats.demolab.com?user=VISWA-R-R&theme=tokyonight&hide_border=true"
-    alt="GitHub Streak"
+    src="https://streak-stats.demolab.com/?user=VISWA-R-R&theme=tokyonight&hide_border=true"
+    alt="GitHub Contribution Streak"
+    width="80%"
   />
 </p>
+
+<!-- ==================== TOP LANGUAGES ==================== -->
 
 <p align="center">
   <img
     src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=VISWA-R-R&theme=tokyonight"
     alt="Top Languages"
+    width="48%"
   />
 </p>
 
