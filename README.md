@@ -77,11 +77,13 @@ I'm currently learning **Spring Boot, Hibernate, and REST APIs**.
   width="38%"
 />
 
-<img
-  src="https://streak-stats.demolab.com?user=VISWA-R-R&theme=tokyonight&hide_border=true"
-  alt="GitHub Contribution Streak"
-  width="66%"
-/>
+
+<p align="center">
+  <img
+    src="https://streak-stats.demolab.com/?user=VISWA-R-R&theme=tokyonight&hide_border=false"
+    alt="GitHub Contribution Streak"
+  />
+</p>
 
 <img
   src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=VISWA-R-R&theme=tokyonight"
