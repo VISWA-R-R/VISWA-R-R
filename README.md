@@ -82,6 +82,7 @@ I'm currently learning **Spring Boot, Hibernate, and REST APIs**.
   <img
     src="https://streak-stats.demolab.com/?user=VISWA-R-R&theme=tokyonight&hide_border=false"
     alt="GitHub Contribution Streak"
+    width="66%"
   />
 </p>
 
