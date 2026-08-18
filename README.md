@@ -130,10 +130,8 @@ I'm currently learning **Spring Boot, Hibernate, and REST APIs**.
 <h2>🐍 Contribution Snake</h2>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/VISWA-R-R/VISWA-R-R/output/github-contribution-grid-snake.svg" alt="GitHub Contribution Snake">
+  <img src="https://raw.githubusercontent.com/VISWA-R-R/VISWA-R-R/gh-pages/github-contribution-grid-snake.svg" alt="GitHub Contribution Snake">
 </p>
-
-</div>
 
 ---
 
