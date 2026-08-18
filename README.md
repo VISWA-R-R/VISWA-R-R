@@ -95,16 +95,11 @@ I'm currently learning **Spring Boot, Hibernate, and REST APIs**.
 
 ---
 
-## 📈 Contribution Graph
+<h2>📊 Contribution Graph</h2>
 
-<div align="center">
-
-<img
-  src="https://github-readme-activity-graph.vercel.app/graph?username=VISWA-R-R&theme=tokyo-night&hide_border=true"
-  alt="GitHub Contribution Graph"
-/>
-
-</div>
+<p align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=VISWA-R-R&theme=react-dark&hide_border=true" alt="Viswa R R's Contribution Graph">
+</p>
 
 ---
 
@@ -132,24 +127,11 @@ I'm currently learning **Spring Boot, Hibernate, and REST APIs**.
 
 ---
 
-## 🐍 Contribution Snake
+<h2>🐍 Contribution Snake</h2>
 
-<div align="center">
-
-<picture>
-  <source
-    media="(prefers-color-scheme: dark)"
-    srcset="https://raw.githubusercontent.com/VISWA-R-R/VISWA-R-R/output/snake-dark.svg"
-  >
-  <source
-    media="(prefers-color-scheme: light)"
-    srcset="https://raw.githubusercontent.com/VISWA-R-R/VISWA-R-R/output/snake.svg"
-  >
-  <img
-    alt="GitHub contribution snake"
-    src="https://raw.githubusercontent.com/VISWA-R-R/VISWA-R-R/output/snake.svg"
-  >
-</picture>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/VISWA-R-R/VISWA-R-R/output/github-contribution-grid-snake.svg" alt="GitHub Contribution Snake">
+</p>
 
 </div>
 
