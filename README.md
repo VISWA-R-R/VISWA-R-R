@@ -140,7 +140,6 @@ I'm currently learning **Spring Boot, Hibernate, and REST APIs**.
     alt="VISWA-R-R GitHub Contribution Snake"
   />
 </p>
-
 ---
 
 <div align="center">
