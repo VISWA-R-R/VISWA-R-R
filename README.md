@@ -80,8 +80,8 @@ I'm currently learning **Spring Boot, Hibernate, and REST APIs**.
 
 <p align="center">
   <img
-    src="https://streak-stats.demolab.com/?user=VISWA-R-R&theme=tokyonight&hide_border=false"
-    alt="GitHub Contribution Streak"
+    src="https://streak-stats.demolab.com/?user=VISWA-R-R&theme=dark&hide_border=true"
+    alt="VISWA-R-R GitHub Contribution Streak"
     width="66%"
   />
 </p>
@@ -99,8 +99,13 @@ I'm currently learning **Spring Boot, Hibernate, and REST APIs**.
 <h2>📊 Contribution Graph</h2>
 
 <p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=VISWA-R-R&theme=react-dark&hide_border=true" alt="Viswa R R's Contribution Graph">
+  <img
+    src="https://github-readme-activity-graph.vercel.app/graph?username=VISWA-R-R&bg_color=0d1117&color=ffffff&line=00ff00&point=ffffff&area=true&hide_border=true"
+    alt="VISWA-R-R Contribution Graph"
+  />
 </p>
+
+---
 
 ---
 
