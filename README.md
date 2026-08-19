@@ -77,12 +77,10 @@ I'm currently learning **Spring Boot, Hibernate, and REST APIs**.
   width="38%"
 />
 
-
 <p align="center">
   <img
-    src="https://streak-stats.demolab.com/?user=VISWA-R-R&theme=dark&hide_border=true"
+    src="https://github-readme-streak-stats.herokuapp.com/?user=VISWA-R-R&theme=dark&hide_border=true"
     alt="VISWA-R-R GitHub Contribution Streak"
-    width="66%"
   />
 </p>
 
@@ -136,7 +134,10 @@ I'm currently learning **Spring Boot, Hibernate, and REST APIs**.
 <h2>🐍 Contribution Snake</h2>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/VISWA-R-R/VISWA-R-R/gh-pages/github-contribution-grid-snake-dark.svg" alt="GitHub Contribution Snake">
+  <img
+    src="https://raw.githubusercontent.com/VISWA-R-R/VISWA-R-R/gh-pages/github-contribution-grid-snake-dark.svg"
+    alt="VISWA-R-R GitHub Contribution Snake"
+  />
 </p>
 
 ---
