@@ -1,8 +1,16 @@
 name: Generate Contribution Snake
 
 on:
+  # Update whenever you push a commit to the repository
+  push:
+    branches:
+      - main
+
+  # Also check automatically every hour
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "0 * * * *"
+
+  # Allows you to run it manually
   workflow_dispatch:
 
 permissions:
