@@ -81,6 +81,7 @@ I'm currently learning **Spring Boot, Hibernate, and REST APIs**.
   <img
     src="https://github-readme-streak-stats.herokuapp.com/?user=VISWA-R-R&theme=dark&hide_border=true"
     alt="VISWA-R-R GitHub Contribution Streak"
+    width="66%"
   />
 </p>
 
