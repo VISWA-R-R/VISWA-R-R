@@ -104,7 +104,7 @@ I'm currently learning **Spring Boot, Hibernate, and REST APIs**.
 <p align="center">
   <img
     src="./assets/github-contribution-graph.svg"
-    alt="Viswa R R GitHub Contribution Graph"
+    alt="VISWA-R-R Monthly GitHub Contribution Graph"
     width="100%"
   />
 </p>
