@@ -65,13 +65,6 @@ I'm currently learning **Spring Boot, Hibernate, and REST APIs**.
 
 </div>
 
----
-
-## 📅 GitHub Contribution Calendar
-
-<p align="center">
-  <img src="https://ghchart.rshah.org/YOUR_GITHUB_USERNAME" alt="GitHub Contribution Chart" width="100%"/>
-</p>
 
 ---
 
