@@ -1,6 +1,4 @@
-# .github/workflows/update-contribution-graph.yml
-
-name: Update GitHub Contribution Graph
+name: Update Contribution Wave Graph
 
 on:
   push:
@@ -9,7 +7,6 @@ on:
       - master
 
   schedule:
-    # Runs every day at 00:00 UTC
     - cron: "0 0 * * *"
 
   workflow_dispatch:
@@ -19,10 +16,12 @@ permissions:
 
 jobs:
   update-graph:
+
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+
+      - name: Checkout
         uses: actions/checkout@v4
 
       - name: Setup Python
@@ -30,10 +29,10 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: Generate contribution graph
+      - name: Generate Wave Graph
         run: python generate_graph.py
 
-      - name: Commit updated graph
+      - name: Commit Graph
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -41,8 +40,8 @@ jobs:
           git add assets/github-contribution-graph.svg
 
           if git diff --cached --quiet; then
-            echo "No graph changes."
+            echo "No changes to graph."
           else
-            git commit -m "Update contribution graph [skip ci]"
+            git commit -m "Update contribution wave graph"
             git push
           fi
