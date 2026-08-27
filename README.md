@@ -86,7 +86,11 @@ I'm currently learning **Spring Boot, Hibernate, and REST APIs**.
 />
 
 <p align="center">
-  <img src="https://streak-stats.demolab.com?user=YOUR_GITHUB_USERNAME&theme=tokyonight&hide_border=true&cache_seconds=86400" />
+  <img
+    src="./assets/github-streak.svg"
+    alt="VISWA-R-R GitHub Streak"
+    width="850"
+  />
 </p>
 
 <img
