@@ -4,79 +4,42 @@ import datetime
 import os
 import html
 
-# ============================================================
-# YOUR GITHUB PROFILE
-# ============================================================
-
 USERNAME = "VISWA-R-R"
-
-# Your profile repository:
-# https://github.com/VISWA-R-R/VISWA-R-R
-
-# ============================================================
-# GITHUB CONTRIBUTION API
-# ============================================================
-
-API_URL = (
-    f"https://github-contributions-api.jogruber.de/v4/"
-    f"{USERNAME}?y=last"
-)
-
-# This file must exist inside your profile repository
+API_URL = f"https://github-contributions-api.jogruber.de/v4/{USERNAME}?y=last"
 OUTPUT = "assets/github-contribution-graph.svg"
 
 os.makedirs("assets", exist_ok=True)
 
 # ============================================================
-# GET GITHUB CONTRIBUTION DATA
+# GET GITHUB CONTRIBUTIONS
 # ============================================================
 
 request = urllib.request.Request(
     API_URL,
-    headers={
-        "User-Agent": "Mozilla/5.0"
-    }
+    headers={"User-Agent": "GitHub-Wave-Graph"}
 )
 
-try:
-    with urllib.request.urlopen(request, timeout=30) as response:
-        data = json.loads(
-            response.read().decode("utf-8")
-        )
-
-except Exception as e:
-    raise Exception(
-        f"Could not get GitHub contribution data: {e}"
-    )
+with urllib.request.urlopen(request, timeout=30) as response:
+    data = json.loads(response.read().decode("utf-8"))
 
 contributions = data.get("contributions", [])
 
 if not contributions:
-    raise Exception(
-        "No GitHub contribution data found."
-    )
+    raise Exception("Unable to get GitHub contribution data.")
+
+contribution_map = {
+    item["date"]: item.get("count", 0)
+    for item in contributions
+    if item.get("date")
+}
 
 # ============================================================
-# STORE CONTRIBUTIONS BY DATE
-# ============================================================
-
-contribution_map = {}
-
-for item in contributions:
-
-    date = item.get("date")
-    count = item.get("count", 0)
-
-    if date:
-        contribution_map[date] = int(count)
-
-# ============================================================
-# LAST 365 DAYS
+# CURRENT MONTH ONLY
 # ============================================================
 
 today = datetime.date.today()
 
-start_date = today - datetime.timedelta(days=364)
+start_date = today.replace(day=1)
 
 dates = []
 values = []
@@ -84,171 +47,130 @@ values = []
 current = start_date
 
 while current <= today:
-
     dates.append(current)
-
-    date_string = current.strftime("%Y-%m-%d")
-
     values.append(
         contribution_map.get(
-            date_string,
+            current.strftime("%Y-%m-%d"),
             0
         )
     )
-
     current += datetime.timedelta(days=1)
 
 # ============================================================
-# GRAPH SIZE
+# GRAPH SETTINGS
 # ============================================================
 
-WIDTH = 1200
-HEIGHT = 430
+WIDTH = 1000
+HEIGHT = 420
 
-LEFT = 70
-RIGHT = 35
+LEFT = 65
+RIGHT = 30
 TOP = 75
 BOTTOM = 65
 
 GRAPH_WIDTH = WIDTH - LEFT - RIGHT
 GRAPH_HEIGHT = HEIGHT - TOP - BOTTOM
 
-# ============================================================
-# MAXIMUM CONTRIBUTION
-# ============================================================
+max_value = max(values) if values else 1
 
-max_value = max(values)
-
-if max_value <= 0:
+if max_value == 0:
     max_value = 1
 
-# Add headroom
-graph_max = max_value * 1.20
-
 # ============================================================
-# CREATE GRAPH POINTS
+# CREATE WAVE POINTS
 # ============================================================
 
 points = []
 
 for i, value in enumerate(values):
 
-    x = LEFT + (
-        i / (len(values) - 1)
-    ) * GRAPH_WIDTH
+    if len(values) == 1:
+        x = LEFT
+    else:
+        x = LEFT + (
+            i / (len(values) - 1)
+        ) * GRAPH_WIDTH
 
-    y = (
-        TOP
-        + GRAPH_HEIGHT
-        - (
-            value / graph_max
-        ) * GRAPH_HEIGHT
-    )
+    y = TOP + GRAPH_HEIGHT - (
+        value / max_value
+    ) * GRAPH_HEIGHT
 
-    points.append(
-        (x, y)
+    points.append((x, y))
+
+# ============================================================
+# SMOOTH WAVE
+# ============================================================
+
+path = f"M {points[0][0]:.2f} {points[0][1]:.2f}"
+
+for i in range(1, len(points)):
+
+    x1, y1 = points[i - 1]
+    x2, y2 = points[i]
+
+    midpoint = (x1 + x2) / 2
+
+    path += (
+        f" C {midpoint:.2f} {y1:.2f}, "
+        f"{midpoint:.2f} {y2:.2f}, "
+        f"{x2:.2f} {y2:.2f}"
     )
 
 # ============================================================
-# CREATE SMOOTH WAVE
-# ============================================================
-
-path = ""
-
-if points:
-
-    path = (
-        f"M {points[0][0]:.2f} "
-        f"{points[0][1]:.2f}"
-    )
-
-    for i in range(1, len(points)):
-
-        x1, y1 = points[i - 1]
-        x2, y2 = points[i]
-
-        midpoint = (
-            x1 + x2
-        ) / 2
-
-        path += (
-            f" C "
-            f"{midpoint:.2f} {y1:.2f}, "
-            f"{midpoint:.2f} {y2:.2f}, "
-            f"{x2:.2f} {y2:.2f}"
-        )
-
-# ============================================================
-# AREA BELOW WAVE
+# AREA UNDER GRAPH
 # ============================================================
 
 bottom_y = TOP + GRAPH_HEIGHT
 
-area_path = path
-
-area_path += (
-    f" L {points[-1][0]:.2f} {bottom_y:.2f}"
-    f" L {points[0][0]:.2f} {bottom_y:.2f}"
-    " Z"
+area_path = (
+    path
+    + f" L {points[-1][0]:.2f} {bottom_y}"
+    + f" L {points[0][0]:.2f} {bottom_y}"
+    + " Z"
 )
 
 # ============================================================
-# START SVG
+# SVG
 # ============================================================
 
 svg = []
 
 svg.append(
     f'<svg xmlns="http://www.w3.org/2000/svg" '
-    f'width="{WIDTH}" '
-    f'height="{HEIGHT}" '
+    f'width="{WIDTH}" height="{HEIGHT}" '
     f'viewBox="0 0 {WIDTH} {HEIGHT}">'
 )
 
-# ============================================================
-# BACKGROUND
-# ============================================================
-
+# Background
 svg.append(
-    '<rect '
-    'width="100%" '
-    'height="100%" '
-    'rx="15" '
-    'fill="#0d1117"/>'
+    '<rect width="100%" height="100%" '
+    'rx="15" fill="#0d1117"/>'
 )
 
 # ============================================================
 # TITLE
 # ============================================================
 
+month_name = today.strftime("%B %Y")
+
 svg.append(
-    f'<text '
-    f'x="{WIDTH / 2}" '
-    'y="35" '
+    f'<text x="{WIDTH / 2}" y="38" '
     'text-anchor="middle" '
     'font-family="Arial, sans-serif" '
-    'font-size="22" '
+    'font-size="24" '
     'font-weight="bold" '
     'fill="#58a6ff">'
     f'{html.escape(USERNAME)}\'s Contribution Graph'
     '</text>'
 )
 
-# ============================================================
-# TOTAL CONTRIBUTIONS
-# ============================================================
-
-total = sum(values)
-
 svg.append(
-    f'<text '
-    f'x="{WIDTH - RIGHT}" '
-    'y="35" '
+    f'<text x="{WIDTH - RIGHT}" y="38" '
     'text-anchor="end" '
     'font-family="Arial, sans-serif" '
-    'font-size="13" '
+    'font-size="14" '
     'fill="#8b949e">'
-    f'{total} contributions'
+    f'{month_name}'
     '</text>'
 )
 
@@ -256,65 +178,51 @@ svg.append(
 # GRID LINES
 # ============================================================
 
-GRID_LINES = 5
+grid_lines = 5
 
-for i in range(GRID_LINES + 1):
+for i in range(grid_lines + 1):
 
-    ratio = i / GRID_LINES
+    y = TOP + GRAPH_HEIGHT - (
+        i / grid_lines
+    ) * GRAPH_HEIGHT
 
-    y = (
-        TOP
-        + GRAPH_HEIGHT
-        - ratio * GRAPH_HEIGHT
+    value = round(
+        max_value * i / grid_lines
     )
 
-    grid_value = round(
-        graph_max * ratio
-    )
-
-    # Horizontal line
     svg.append(
-        f'<line '
-        f'x1="{LEFT}" '
-        f'y1="{y:.2f}" '
-        f'x2="{WIDTH - RIGHT}" '
-        f'y2="{y:.2f}" '
+        f'<line x1="{LEFT}" y1="{y:.2f}" '
+        f'x2="{WIDTH - RIGHT}" y2="{y:.2f}" '
         'stroke="#21262d" '
         'stroke-width="1"/>'
     )
 
-    # Y-axis value
     svg.append(
-        f'<text '
-        f'x="{LEFT - 12}" '
-        f'y="{y + 4:.2f}" '
+        f'<text x="{LEFT - 12}" y="{y + 4:.2f}" '
         'text-anchor="end" '
         'font-family="Arial, sans-serif" '
         'font-size="11" '
         'fill="#8b949e">'
-        f'{grid_value}'
+        f'{value}'
         '</text>'
     )
 
 # ============================================================
-# AREA UNDER GRAPH
+# AREA
 # ============================================================
 
 svg.append(
-    f'<path '
-    f'd="{area_path}" '
+    f'<path d="{area_path}" '
     'fill="#58a6ff" '
-    'fill-opacity="0.12" '
-    'stroke="none"/>'
+    'fill-opacity="0.12"/>'
 )
 
 # ============================================================
-# MAIN WAVE LINE
+# WAVE LINE
 # ============================================================
 
 svg.append(
-    f'<path '
-    f'd="{path}" '
+    f'<path d="{path}" '
     'fill="none" '
     'stroke="#58a6ff" '
     'stroke-width="4" '
@@ -323,104 +231,69 @@ svg.append(
 )
 
 # ============================================================
-# CONTRIBUTION POINTS
+# POINTS
 # ============================================================
 
 for i, (x, y) in enumerate(points):
 
-    value = values[i]
+    count = values[i]
 
-    if value > 0:
-
-        date_text = dates[i].strftime(
-            "%d %B %Y"
-        )
-
-        svg.append(
-            f'<circle '
-            f'cx="{x:.2f}" '
-            f'cy="{y:.2f}" '
-            'r="4" '
-            'fill="#ffffff" '
-            'stroke="#58a6ff" '
-            'stroke-width="2">'
-            f'<title>'
-            f'{date_text}: '
-            f'{value} contributions'
-            f'</title>'
-            '</circle>'
-        )
+    svg.append(
+        f'<circle cx="{x:.2f}" cy="{y:.2f}" '
+        'r="5" '
+        'fill="#ffffff" '
+        'stroke="#58a6ff" '
+        'stroke-width="2">'
+        f'<title>'
+        f'{dates[i].strftime("%d %B %Y")}: '
+        f'{count} contributions'
+        f'</title>'
+        '</circle>'
+    )
 
 # ============================================================
-# MONTH LABELS
+# DATE LABELS
 # ============================================================
-
-last_month = None
 
 for i, date in enumerate(dates):
 
-    month = date.strftime("%b")
+    # Show every 3 days to keep it clean
+    if date.day == 1 or date.day % 3 == 0:
 
-    if month != last_month:
-
-        x = (
-            LEFT
-            + (
-                i / (len(dates) - 1)
-            ) * GRAPH_WIDTH
-        )
+        x = points[i][0]
 
         svg.append(
-            f'<text '
-            f'x="{x:.2f}" '
-            f'y="{HEIGHT - 25}" '
+            f'<text x="{x:.2f}" '
+            f'y="{HEIGHT - 28}" '
+            'text-anchor="middle" '
             'font-family="Arial, sans-serif" '
-            'font-size="12" '
+            'font-size="11" '
             'fill="#8b949e">'
-            f'{month}'
+            f'{date.day}'
             '</text>'
         )
 
-        last_month = month
-
 # ============================================================
-# X AXIS
+# TOTAL
 # ============================================================
 
-svg.append(
-    f'<line '
-    f'x1="{LEFT}" '
-    f'y1="{TOP + GRAPH_HEIGHT}" '
-    f'x2="{WIDTH - RIGHT}" '
-    f'y2="{TOP + GRAPH_HEIGHT}" '
-    'stroke="#30363d" '
-    'stroke-width="1"/>'
-)
-
-# ============================================================
-# DAYS LABEL
-# ============================================================
+total = sum(values)
 
 svg.append(
-    f'<text '
-    f'x="{WIDTH / 2}" '
-    f'y="{HEIGHT - 5}" '
-    'text-anchor="middle" '
+    f'<text x="{WIDTH - RIGHT}" '
+    f'y="{HEIGHT - 28}" '
+    'text-anchor="end" '
     'font-family="Arial, sans-serif" '
-    'font-size="12" '
+    'font-size="13" '
     'fill="#8b949e">'
-    'Days'
+    f'Total: {total}'
     '</text>'
 )
-
-# ============================================================
-# CLOSE SVG
-# ============================================================
 
 svg.append("</svg>")
 
 # ============================================================
-# SAVE GRAPH
+# SAVE
 # ============================================================
 
 with open(
@@ -428,23 +301,9 @@ with open(
     "w",
     encoding="utf-8"
 ) as file:
-
-    file.write(
-        "\n".join(svg)
-    )
+    file.write("\n".join(svg))
 
 print(
-    "GitHub Contribution Wave Graph updated!"
+    f"{month_name} contribution graph updated successfully!"
 )
-
-print(
-    f"Username: {USERNAME}"
-)
-
-print(
-    f"Total contributions: {total}"
-)
-
-print(
-    f"Graph saved to: {OUTPUT}"
-)
+print(f"Total contributions this month: {total}")
