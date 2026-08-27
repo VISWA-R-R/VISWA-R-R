@@ -67,6 +67,14 @@ I'm currently learning **Spring Boot, Hibernate, and REST APIs**.
 
 ---
 
+## 📅 GitHub Contribution Calendar
+
+<p align="center">
+  <img src="https://ghchart.rshah.org/YOUR_GITHUB_USERNAME" alt="GitHub Contribution Chart" width="100%"/>
+</p>
+
+---
+
 ## 📊 GitHub Statistics
 
 <div align="center">
@@ -78,7 +86,7 @@ I'm currently learning **Spring Boot, Hibernate, and REST APIs**.
 />
 
 <p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=VISWA-R-R&theme=tokyonight&hide_border=true" width="70%" />
+  <img src="https://streak-stats.demolab.com?user=YOUR_GITHUB_USERNAME&theme=tokyonight&hide_border=true&cache_seconds=86400" />
 </p>
 
 <img
@@ -94,11 +102,7 @@ I'm currently learning **Spring Boot, Hibernate, and REST APIs**.
 ## 📈 GitHub Contribution Graph
 
 <p align="center">
-  <img
-    src="./github-contribution-graph.svg"
-    alt="GitHub Contribution Graph"
-    width="100%"
-  />
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=YOUR_GITHUB_USERNAME&custom_title=Viswa%20R%20R's%20Contribution%20Graph&bg_color=0d1117&color=58a6ff&line=58a6ff&point=ffffff&area=true&hide_border=true&days=365" width="100%" />
 </p>
 
 ---
