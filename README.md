@@ -102,7 +102,11 @@ I'm currently learning **Spring Boot, Hibernate, and REST APIs**.
 ## 📈 GitHub Contribution Graph
 
 <p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=YOUR_GITHUB_USERNAME&custom_title=Viswa%20R%20R's%20Contribution%20Graph&bg_color=0d1117&color=58a6ff&line=58a6ff&point=ffffff&area=true&hide_border=true&days=365" width="100%" />
+  <img
+    src="./assets/github-contribution-graph.svg"
+    alt="Viswa R R GitHub Contribution Graph"
+    width="100%"
+  />
 </p>
 
 ---
