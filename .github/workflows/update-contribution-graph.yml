@@ -1,12 +1,16 @@
-name: Update Contribution Wave Graph
+# .github/workflows/update-contribution-graph.yml
+
+name: Update Monthly Contribution Graph
 
 on:
+
   push:
     branches:
       - main
       - master
 
   schedule:
+    # Every day at 12:00 AM UTC
     - cron: "0 0 * * *"
 
   workflow_dispatch:
@@ -15,6 +19,7 @@ permissions:
   contents: write
 
 jobs:
+
   update-graph:
 
     runs-on: ubuntu-latest
@@ -23,25 +28,36 @@ jobs:
 
       - name: Checkout Repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.x"
 
-      - name: Generate Monthly Wave Graph
-        run: python generate_graph.py
-
-      - name: Commit Updated Graph
+      - name: Generate Current Month Graph
         run: |
+          python generate_graph.py
+
+      - name: Commit Graph
+        run: |
+
           git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git config user.email \
+            "41898282+github-actions[bot]@users.noreply.github.com"
 
           git add assets/github-contribution-graph.svg
 
           if git diff --cached --quiet; then
+
             echo "No graph changes."
+
           else
+
             git commit -m "Update monthly contribution graph"
+
             git push
+
           fi
