@@ -21,7 +21,7 @@ jobs:
 
     steps:
 
-      - name: Checkout
+      - name: Checkout Repository
         uses: actions/checkout@v4
 
       - name: Setup Python
@@ -29,10 +29,10 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: Generate Wave Graph
+      - name: Generate Monthly Wave Graph
         run: python generate_graph.py
 
-      - name: Commit Graph
+      - name: Commit Updated Graph
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -40,8 +40,8 @@ jobs:
           git add assets/github-contribution-graph.svg
 
           if git diff --cached --quiet; then
-            echo "No changes to graph."
+            echo "No graph changes."
           else
-            git commit -m "Update contribution wave graph"
+            git commit -m "Update monthly contribution graph"
             git push
           fi
