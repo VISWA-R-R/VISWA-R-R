@@ -14,10 +14,10 @@
 <text x="53" y="144.00" text-anchor="end" font-family="Arial,sans-serif" font-size="11" fill="#8b949e">4</text>
 <line x1="65" y1="85.00" x2="1065" y2="85.00" stroke="#21262d" stroke-width="1"/>
 <text x="53" y="89.00" text-anchor="end" font-family="Arial,sans-serif" font-size="11" fill="#8b949e">5</text>
-<path d="M 65.00 250.00 C 565.00 250.00, 565.00 360.00, 1065.00 360.00 L 1065.00 360 L 65.00 360 Z" fill="#58a6ff" fill-opacity="0.12"/>
-<path d="M 65.00 250.00 C 565.00 250.00, 565.00 360.00, 1065.00 360.00" fill="none" stroke="#58a6ff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 65.00 250.00 C 565.00 250.00, 565.00 250.00, 1065.00 250.00 L 1065.00 360 L 65.00 360 Z" fill="#58a6ff" fill-opacity="0.12"/>
+<path d="M 65.00 250.00 C 565.00 250.00, 565.00 250.00, 1065.00 250.00" fill="none" stroke="#58a6ff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
 <circle cx="65.00" cy="250.00" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>01 September 2026: 2 contributions</title></circle>
-<circle cx="1065.00" cy="360.00" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>02 September 2026: 0 contributions</title></circle>
+<circle cx="1065.00" cy="250.00" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>02 September 2026: 2 contributions</title></circle>
 <text x="65.00" y="400" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#8b949e">1</text>
-<text x="65" y="400" font-family="Arial,sans-serif" font-size="13" fill="#8b949e">This month: 2 contributions</text>
+<text x="65" y="400" font-family="Arial,sans-serif" font-size="13" fill="#8b949e">This month: 4 contributions</text>
 </svg>
