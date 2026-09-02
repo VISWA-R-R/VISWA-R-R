@@ -5,19 +5,19 @@
 <line x1="65" y1="360.00" x2="1065" y2="360.00" stroke="#21262d" stroke-width="1"/>
 <text x="53" y="364.00" text-anchor="end" font-family="Arial,sans-serif" font-size="11" fill="#8b949e">0</text>
 <line x1="65" y1="305.00" x2="1065" y2="305.00" stroke="#21262d" stroke-width="1"/>
-<text x="53" y="309.00" text-anchor="end" font-family="Arial,sans-serif" font-size="11" fill="#8b949e">1</text>
+<text x="53" y="309.00" text-anchor="end" font-family="Arial,sans-serif" font-size="11" fill="#8b949e">2</text>
 <line x1="65" y1="250.00" x2="1065" y2="250.00" stroke="#21262d" stroke-width="1"/>
 <text x="53" y="254.00" text-anchor="end" font-family="Arial,sans-serif" font-size="11" fill="#8b949e">3</text>
 <line x1="65" y1="195.00" x2="1065" y2="195.00" stroke="#21262d" stroke-width="1"/>
-<text x="53" y="199.00" text-anchor="end" font-family="Arial,sans-serif" font-size="11" fill="#8b949e">4</text>
+<text x="53" y="199.00" text-anchor="end" font-family="Arial,sans-serif" font-size="11" fill="#8b949e">5</text>
 <line x1="65" y1="140.00" x2="1065" y2="140.00" stroke="#21262d" stroke-width="1"/>
 <text x="53" y="144.00" text-anchor="end" font-family="Arial,sans-serif" font-size="11" fill="#8b949e">6</text>
 <line x1="65" y1="85.00" x2="1065" y2="85.00" stroke="#21262d" stroke-width="1"/>
-<text x="53" y="89.00" text-anchor="end" font-family="Arial,sans-serif" font-size="11" fill="#8b949e">7</text>
-<path d="M 65.00 281.43 C 565.00 281.43, 565.00 163.57, 1065.00 163.57 L 1065.00 360 L 65.00 360 Z" fill="#58a6ff" fill-opacity="0.12"/>
-<path d="M 65.00 281.43 C 565.00 281.43, 565.00 163.57, 1065.00 163.57" fill="none" stroke="#58a6ff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-<circle cx="65.00" cy="281.43" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>01 September 2026: 2 contributions</title></circle>
-<circle cx="1065.00" cy="163.57" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>02 September 2026: 5 contributions</title></circle>
+<text x="53" y="89.00" text-anchor="end" font-family="Arial,sans-serif" font-size="11" fill="#8b949e">8</text>
+<path d="M 65.00 291.25 C 565.00 291.25, 565.00 153.75, 1065.00 153.75 L 1065.00 360 L 65.00 360 Z" fill="#58a6ff" fill-opacity="0.12"/>
+<path d="M 65.00 291.25 C 565.00 291.25, 565.00 153.75, 1065.00 153.75" fill="none" stroke="#58a6ff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="65.00" cy="291.25" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>01 September 2026: 2 contributions</title></circle>
+<circle cx="1065.00" cy="153.75" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>02 September 2026: 6 contributions</title></circle>
 <text x="65.00" y="400" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#8b949e">1</text>
-<text x="65" y="400" font-family="Arial,sans-serif" font-size="13" fill="#8b949e">This month: 7 contributions</text>
+<text x="65" y="400" font-family="Arial,sans-serif" font-size="13" fill="#8b949e">This month: 8 contributions</text>
 </svg>
