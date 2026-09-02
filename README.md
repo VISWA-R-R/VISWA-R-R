@@ -180,6 +180,8 @@ width="350"
 
 <div align="center">
 
-### ⭐ Thanks for visiting my profile ⭐
+<img src="./assets/footer-banner-hq.gif"
+     alt="Viswa R R - Java Backend Developer"
+     width="100%">
 
 </div>
