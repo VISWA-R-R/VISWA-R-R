@@ -23,23 +23,59 @@
 
 ## 👨‍💻 About Me
 
-<div align="center">
+<table>
+<tr>
 
-```yaml
-name: Viswa R R
-role: Java Backend Developer
-education: B.Tech in Computer Science and Engineering
-focus: Java, Spring Boot, SQL, PostgreSQL, Backend Development
-learning: Spring Boot, Hibernate, REST APIs
-location: Tamil Nadu, India
-email: viswaoff03@gmail.com
-```
+<td width="60%" valign="top">
 
-</div>
+<h3>👋 Hello! I'm Viswa R R</h3>
 
-I'm a **Java Backend Developer** with a B.Tech in **Computer Science and Engineering**. I'm passionate about **Java, Spring Boot, SQL, PostgreSQL, and Backend Development**.
+<p>
+I'm a <strong>Java Backend Developer</strong> with a B.Tech in
+<strong>Computer Science and Engineering</strong>.
+</p>
 
-I'm currently learning **Spring Boot, Hibernate, and REST APIs**.
+<p>
+I'm passionate about building backend applications using
+<strong>Java, Spring Boot, SQL, PostgreSQL, Hibernate and REST APIs.</strong>
+</p>
+
+<h3>🎯 My Focus</h3>
+
+<ul>
+<li>☕ Java</li>
+<li>🌱 Spring Boot</li>
+<li>🗄️ SQL & PostgreSQL</li>
+<li>🔗 REST APIs</li>
+<li>⚙️ Hibernate</li>
+<li>💻 Backend Development</li>
+</ul>
+
+<h3>📚 Currently Learning</h3>
+
+<p>
+Spring Boot • Hibernate • REST APIs • Database Design
+</p>
+
+<p>
+📍 Tamil Nadu, India<br>
+📧 <a href="mailto:viswaoff03@gmail.com">viswaoff03@gmail.com</a>
+</p>
+
+</td>
+
+<td width="40%" align="center" valign="middle">
+
+<img
+src="https://media.giphy.com/media/SWoSkN6DxTszqIKEqv/giphy.gif"
+alt="Coder GIF"
+width="350"
+/>
+
+</td>
+
+</tr>
+</table>
 
 ---
 
