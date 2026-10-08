@@ -14,16 +14,17 @@
 <text x="53" y="144.00" text-anchor="end" font-family="Arial,sans-serif" font-size="11" fill="#8b949e">8</text>
 <line x1="65" y1="85.00" x2="1065" y2="85.00" stroke="#21262d" stroke-width="1"/>
 <text x="53" y="89.00" text-anchor="end" font-family="Arial,sans-serif" font-size="11" fill="#8b949e">10</text>
-<path d="M 65.00 305.00 C 148.33 305.00, 148.33 140.00, 231.67 140.00 C 315.00 140.00, 315.00 305.00, 398.33 305.00 C 481.67 305.00, 481.67 195.00, 565.00 195.00 C 648.33 195.00, 648.33 250.00, 731.67 250.00 C 815.00 250.00, 815.00 250.00, 898.33 250.00 C 981.67 250.00, 981.67 332.50, 1065.00 332.50 L 1065.00 360 L 65.00 360 Z" fill="#58a6ff" fill-opacity="0.12"/>
-<path d="M 65.00 305.00 C 148.33 305.00, 148.33 140.00, 231.67 140.00 C 315.00 140.00, 315.00 305.00, 398.33 305.00 C 481.67 305.00, 481.67 195.00, 565.00 195.00 C 648.33 195.00, 648.33 250.00, 731.67 250.00 C 815.00 250.00, 815.00 250.00, 898.33 250.00 C 981.67 250.00, 981.67 332.50, 1065.00 332.50" fill="none" stroke="#58a6ff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 65.00 305.00 C 136.43 305.00, 136.43 140.00, 207.86 140.00 C 279.29 140.00, 279.29 305.00, 350.71 305.00 C 422.14 305.00, 422.14 195.00, 493.57 195.00 C 565.00 195.00, 565.00 250.00, 636.43 250.00 C 707.86 250.00, 707.86 250.00, 779.29 250.00 C 850.71 250.00, 850.71 140.00, 922.14 140.00 C 993.57 140.00, 993.57 332.50, 1065.00 332.50 L 1065.00 360 L 65.00 360 Z" fill="#58a6ff" fill-opacity="0.12"/>
+<path d="M 65.00 305.00 C 136.43 305.00, 136.43 140.00, 207.86 140.00 C 279.29 140.00, 279.29 305.00, 350.71 305.00 C 422.14 305.00, 422.14 195.00, 493.57 195.00 C 565.00 195.00, 565.00 250.00, 636.43 250.00 C 707.86 250.00, 707.86 250.00, 779.29 250.00 C 850.71 250.00, 850.71 140.00, 922.14 140.00 C 993.57 140.00, 993.57 332.50, 1065.00 332.50" fill="none" stroke="#58a6ff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
 <circle cx="65.00" cy="305.00" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>01 October 2026: 2 contributions</title></circle>
-<circle cx="231.67" cy="140.00" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>02 October 2026: 8 contributions</title></circle>
-<circle cx="398.33" cy="305.00" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>03 October 2026: 2 contributions</title></circle>
-<circle cx="565.00" cy="195.00" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>04 October 2026: 6 contributions</title></circle>
-<circle cx="731.67" cy="250.00" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>05 October 2026: 4 contributions</title></circle>
-<circle cx="898.33" cy="250.00" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>06 October 2026: 4 contributions</title></circle>
-<circle cx="1065.00" cy="332.50" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>07 October 2026: 1 contributions</title></circle>
+<circle cx="207.86" cy="140.00" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>02 October 2026: 8 contributions</title></circle>
+<circle cx="350.71" cy="305.00" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>03 October 2026: 2 contributions</title></circle>
+<circle cx="493.57" cy="195.00" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>04 October 2026: 6 contributions</title></circle>
+<circle cx="636.43" cy="250.00" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>05 October 2026: 4 contributions</title></circle>
+<circle cx="779.29" cy="250.00" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>06 October 2026: 4 contributions</title></circle>
+<circle cx="922.14" cy="140.00" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>07 October 2026: 8 contributions</title></circle>
+<circle cx="1065.00" cy="332.50" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>08 October 2026: 1 contributions</title></circle>
 <text x="65.00" y="400" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#8b949e">1</text>
-<text x="731.67" y="400" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#8b949e">5</text>
-<text x="65" y="400" font-family="Arial,sans-serif" font-size="13" fill="#8b949e">This month: 27 contributions</text>
+<text x="636.43" y="400" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#8b949e">5</text>
+<text x="65" y="400" font-family="Arial,sans-serif" font-size="13" fill="#8b949e">This month: 35 contributions</text>
 </svg>
