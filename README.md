@@ -13,7 +13,7 @@
 
 <br/>
 
-<img src="https://komarev.com/ghpvc/?username=VISWA-R-R&label=PROFILE+VIEWS&color=6D28D9&style=for-the-badge" alt="Profile Views" />
+<img src="https://komarev.com/ghpvc/?username=VISWA-R-R&amp;label=PROFILE%20VIEWS&amp;color=6D28D9&amp;style=for-the-badge" alt="Profile views" />
 
 </div>
 
