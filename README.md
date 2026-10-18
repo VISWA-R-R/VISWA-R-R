@@ -13,10 +13,7 @@
 
 <br/>
 
-<img src="https://komarev.com/ghpvc/?username=VISWA-R-R&amp;label=PROFILE%20VIEWS&amp;color=6D28D9&amp;style=for-the-badge" alt="Profile views" />
-
-</div>
-
+![Total profile views](https://github-view-counter.vercel.app/api?username=VISWA-R-R&base=2500&label=Total+profile+views&icon=false)
 <br/>
 
 ---
