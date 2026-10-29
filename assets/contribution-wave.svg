@@ -14,41 +14,42 @@
 <text x="53" y="144.00" text-anchor="end" font-family="Arial,sans-serif" font-size="11" fill="#8b949e">8</text>
 <line x1="65" y1="85.00" x2="1065" y2="85.00" stroke="#21262d" stroke-width="1"/>
 <text x="53" y="89.00" text-anchor="end" font-family="Arial,sans-serif" font-size="11" fill="#8b949e">10</text>
-<path d="M 65.00 305.00 C 83.52 305.00, 83.52 140.00, 102.04 140.00 C 120.56 140.00, 120.56 305.00, 139.07 305.00 C 157.59 305.00, 157.59 195.00, 176.11 195.00 C 194.63 195.00, 194.63 250.00, 213.15 250.00 C 231.67 250.00, 231.67 250.00, 250.19 250.00 C 268.70 250.00, 268.70 140.00, 287.22 140.00 C 305.74 140.00, 305.74 167.50, 324.26 167.50 C 342.78 167.50, 342.78 167.50, 361.30 167.50 C 379.81 167.50, 379.81 222.50, 398.33 222.50 C 416.85 222.50, 416.85 305.00, 435.37 305.00 C 453.89 305.00, 453.89 140.00, 472.41 140.00 C 490.93 140.00, 490.93 305.00, 509.44 305.00 C 527.96 305.00, 527.96 305.00, 546.48 305.00 C 565.00 305.00, 565.00 305.00, 583.52 305.00 C 602.04 305.00, 602.04 305.00, 620.56 305.00 C 639.07 305.00, 639.07 167.50, 657.59 167.50 C 676.11 167.50, 676.11 250.00, 694.63 250.00 C 713.15 250.00, 713.15 305.00, 731.67 305.00 C 750.19 305.00, 750.19 167.50, 768.70 167.50 C 787.22 167.50, 787.22 305.00, 805.74 305.00 C 824.26 305.00, 824.26 250.00, 842.78 250.00 C 861.30 250.00, 861.30 305.00, 879.81 305.00 C 898.33 305.00, 898.33 305.00, 916.85 305.00 C 935.37 305.00, 935.37 305.00, 953.89 305.00 C 972.41 305.00, 972.41 305.00, 990.93 305.00 C 1009.44 305.00, 1009.44 305.00, 1027.96 305.00 C 1046.48 305.00, 1046.48 332.50, 1065.00 332.50 L 1065.00 360 L 65.00 360 Z" fill="#58a6ff" fill-opacity="0.12"/>
-<path d="M 65.00 305.00 C 83.52 305.00, 83.52 140.00, 102.04 140.00 C 120.56 140.00, 120.56 305.00, 139.07 305.00 C 157.59 305.00, 157.59 195.00, 176.11 195.00 C 194.63 195.00, 194.63 250.00, 213.15 250.00 C 231.67 250.00, 231.67 250.00, 250.19 250.00 C 268.70 250.00, 268.70 140.00, 287.22 140.00 C 305.74 140.00, 305.74 167.50, 324.26 167.50 C 342.78 167.50, 342.78 167.50, 361.30 167.50 C 379.81 167.50, 379.81 222.50, 398.33 222.50 C 416.85 222.50, 416.85 305.00, 435.37 305.00 C 453.89 305.00, 453.89 140.00, 472.41 140.00 C 490.93 140.00, 490.93 305.00, 509.44 305.00 C 527.96 305.00, 527.96 305.00, 546.48 305.00 C 565.00 305.00, 565.00 305.00, 583.52 305.00 C 602.04 305.00, 602.04 305.00, 620.56 305.00 C 639.07 305.00, 639.07 167.50, 657.59 167.50 C 676.11 167.50, 676.11 250.00, 694.63 250.00 C 713.15 250.00, 713.15 305.00, 731.67 305.00 C 750.19 305.00, 750.19 167.50, 768.70 167.50 C 787.22 167.50, 787.22 305.00, 805.74 305.00 C 824.26 305.00, 824.26 250.00, 842.78 250.00 C 861.30 250.00, 861.30 305.00, 879.81 305.00 C 898.33 305.00, 898.33 305.00, 916.85 305.00 C 935.37 305.00, 935.37 305.00, 953.89 305.00 C 972.41 305.00, 972.41 305.00, 990.93 305.00 C 1009.44 305.00, 1009.44 305.00, 1027.96 305.00 C 1046.48 305.00, 1046.48 332.50, 1065.00 332.50" fill="none" stroke="#58a6ff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 65.00 305.00 C 82.86 305.00, 82.86 140.00, 100.71 140.00 C 118.57 140.00, 118.57 305.00, 136.43 305.00 C 154.29 305.00, 154.29 195.00, 172.14 195.00 C 190.00 195.00, 190.00 250.00, 207.86 250.00 C 225.71 250.00, 225.71 250.00, 243.57 250.00 C 261.43 250.00, 261.43 140.00, 279.29 140.00 C 297.14 140.00, 297.14 167.50, 315.00 167.50 C 332.86 167.50, 332.86 167.50, 350.71 167.50 C 368.57 167.50, 368.57 222.50, 386.43 222.50 C 404.29 222.50, 404.29 305.00, 422.14 305.00 C 440.00 305.00, 440.00 140.00, 457.86 140.00 C 475.71 140.00, 475.71 305.00, 493.57 305.00 C 511.43 305.00, 511.43 305.00, 529.29 305.00 C 547.14 305.00, 547.14 305.00, 565.00 305.00 C 582.86 305.00, 582.86 305.00, 600.71 305.00 C 618.57 305.00, 618.57 167.50, 636.43 167.50 C 654.29 167.50, 654.29 250.00, 672.14 250.00 C 690.00 250.00, 690.00 305.00, 707.86 305.00 C 725.71 305.00, 725.71 167.50, 743.57 167.50 C 761.43 167.50, 761.43 305.00, 779.29 305.00 C 797.14 305.00, 797.14 250.00, 815.00 250.00 C 832.86 250.00, 832.86 305.00, 850.71 305.00 C 868.57 305.00, 868.57 305.00, 886.43 305.00 C 904.29 305.00, 904.29 305.00, 922.14 305.00 C 940.00 305.00, 940.00 305.00, 957.86 305.00 C 975.71 305.00, 975.71 305.00, 993.57 305.00 C 1011.43 305.00, 1011.43 305.00, 1029.29 305.00 C 1047.14 305.00, 1047.14 332.50, 1065.00 332.50 L 1065.00 360 L 65.00 360 Z" fill="#58a6ff" fill-opacity="0.12"/>
+<path d="M 65.00 305.00 C 82.86 305.00, 82.86 140.00, 100.71 140.00 C 118.57 140.00, 118.57 305.00, 136.43 305.00 C 154.29 305.00, 154.29 195.00, 172.14 195.00 C 190.00 195.00, 190.00 250.00, 207.86 250.00 C 225.71 250.00, 225.71 250.00, 243.57 250.00 C 261.43 250.00, 261.43 140.00, 279.29 140.00 C 297.14 140.00, 297.14 167.50, 315.00 167.50 C 332.86 167.50, 332.86 167.50, 350.71 167.50 C 368.57 167.50, 368.57 222.50, 386.43 222.50 C 404.29 222.50, 404.29 305.00, 422.14 305.00 C 440.00 305.00, 440.00 140.00, 457.86 140.00 C 475.71 140.00, 475.71 305.00, 493.57 305.00 C 511.43 305.00, 511.43 305.00, 529.29 305.00 C 547.14 305.00, 547.14 305.00, 565.00 305.00 C 582.86 305.00, 582.86 305.00, 600.71 305.00 C 618.57 305.00, 618.57 167.50, 636.43 167.50 C 654.29 167.50, 654.29 250.00, 672.14 250.00 C 690.00 250.00, 690.00 305.00, 707.86 305.00 C 725.71 305.00, 725.71 167.50, 743.57 167.50 C 761.43 167.50, 761.43 305.00, 779.29 305.00 C 797.14 305.00, 797.14 250.00, 815.00 250.00 C 832.86 250.00, 832.86 305.00, 850.71 305.00 C 868.57 305.00, 868.57 305.00, 886.43 305.00 C 904.29 305.00, 904.29 305.00, 922.14 305.00 C 940.00 305.00, 940.00 305.00, 957.86 305.00 C 975.71 305.00, 975.71 305.00, 993.57 305.00 C 1011.43 305.00, 1011.43 305.00, 1029.29 305.00 C 1047.14 305.00, 1047.14 332.50, 1065.00 332.50" fill="none" stroke="#58a6ff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
 <circle cx="65.00" cy="305.00" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>01 October 2026: 2 contributions</title></circle>
-<circle cx="102.04" cy="140.00" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>02 October 2026: 8 contributions</title></circle>
-<circle cx="139.07" cy="305.00" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>03 October 2026: 2 contributions</title></circle>
-<circle cx="176.11" cy="195.00" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>04 October 2026: 6 contributions</title></circle>
-<circle cx="213.15" cy="250.00" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>05 October 2026: 4 contributions</title></circle>
-<circle cx="250.19" cy="250.00" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>06 October 2026: 4 contributions</title></circle>
-<circle cx="287.22" cy="140.00" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>07 October 2026: 8 contributions</title></circle>
-<circle cx="324.26" cy="167.50" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>08 October 2026: 7 contributions</title></circle>
-<circle cx="361.30" cy="167.50" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>09 October 2026: 7 contributions</title></circle>
-<circle cx="398.33" cy="222.50" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>10 October 2026: 5 contributions</title></circle>
-<circle cx="435.37" cy="305.00" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>11 October 2026: 2 contributions</title></circle>
-<circle cx="472.41" cy="140.00" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>12 October 2026: 8 contributions</title></circle>
-<circle cx="509.44" cy="305.00" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>13 October 2026: 2 contributions</title></circle>
-<circle cx="546.48" cy="305.00" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>14 October 2026: 2 contributions</title></circle>
-<circle cx="583.52" cy="305.00" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>15 October 2026: 2 contributions</title></circle>
-<circle cx="620.56" cy="305.00" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>16 October 2026: 2 contributions</title></circle>
-<circle cx="657.59" cy="167.50" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>17 October 2026: 7 contributions</title></circle>
-<circle cx="694.63" cy="250.00" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>18 October 2026: 4 contributions</title></circle>
-<circle cx="731.67" cy="305.00" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>19 October 2026: 2 contributions</title></circle>
-<circle cx="768.70" cy="167.50" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>20 October 2026: 7 contributions</title></circle>
-<circle cx="805.74" cy="305.00" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>21 October 2026: 2 contributions</title></circle>
-<circle cx="842.78" cy="250.00" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>22 October 2026: 4 contributions</title></circle>
-<circle cx="879.81" cy="305.00" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>23 October 2026: 2 contributions</title></circle>
-<circle cx="916.85" cy="305.00" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>24 October 2026: 2 contributions</title></circle>
-<circle cx="953.89" cy="305.00" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>25 October 2026: 2 contributions</title></circle>
-<circle cx="990.93" cy="305.00" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>26 October 2026: 2 contributions</title></circle>
-<circle cx="1027.96" cy="305.00" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>27 October 2026: 2 contributions</title></circle>
-<circle cx="1065.00" cy="332.50" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>28 October 2026: 1 contributions</title></circle>
+<circle cx="100.71" cy="140.00" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>02 October 2026: 8 contributions</title></circle>
+<circle cx="136.43" cy="305.00" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>03 October 2026: 2 contributions</title></circle>
+<circle cx="172.14" cy="195.00" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>04 October 2026: 6 contributions</title></circle>
+<circle cx="207.86" cy="250.00" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>05 October 2026: 4 contributions</title></circle>
+<circle cx="243.57" cy="250.00" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>06 October 2026: 4 contributions</title></circle>
+<circle cx="279.29" cy="140.00" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>07 October 2026: 8 contributions</title></circle>
+<circle cx="315.00" cy="167.50" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>08 October 2026: 7 contributions</title></circle>
+<circle cx="350.71" cy="167.50" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>09 October 2026: 7 contributions</title></circle>
+<circle cx="386.43" cy="222.50" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>10 October 2026: 5 contributions</title></circle>
+<circle cx="422.14" cy="305.00" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>11 October 2026: 2 contributions</title></circle>
+<circle cx="457.86" cy="140.00" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>12 October 2026: 8 contributions</title></circle>
+<circle cx="493.57" cy="305.00" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>13 October 2026: 2 contributions</title></circle>
+<circle cx="529.29" cy="305.00" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>14 October 2026: 2 contributions</title></circle>
+<circle cx="565.00" cy="305.00" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>15 October 2026: 2 contributions</title></circle>
+<circle cx="600.71" cy="305.00" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>16 October 2026: 2 contributions</title></circle>
+<circle cx="636.43" cy="167.50" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>17 October 2026: 7 contributions</title></circle>
+<circle cx="672.14" cy="250.00" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>18 October 2026: 4 contributions</title></circle>
+<circle cx="707.86" cy="305.00" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>19 October 2026: 2 contributions</title></circle>
+<circle cx="743.57" cy="167.50" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>20 October 2026: 7 contributions</title></circle>
+<circle cx="779.29" cy="305.00" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>21 October 2026: 2 contributions</title></circle>
+<circle cx="815.00" cy="250.00" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>22 October 2026: 4 contributions</title></circle>
+<circle cx="850.71" cy="305.00" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>23 October 2026: 2 contributions</title></circle>
+<circle cx="886.43" cy="305.00" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>24 October 2026: 2 contributions</title></circle>
+<circle cx="922.14" cy="305.00" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>25 October 2026: 2 contributions</title></circle>
+<circle cx="957.86" cy="305.00" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>26 October 2026: 2 contributions</title></circle>
+<circle cx="993.57" cy="305.00" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>27 October 2026: 2 contributions</title></circle>
+<circle cx="1029.29" cy="305.00" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>28 October 2026: 2 contributions</title></circle>
+<circle cx="1065.00" cy="332.50" r="5" fill="#ffffff" stroke="#58a6ff" stroke-width="2"><title>29 October 2026: 1 contributions</title></circle>
 <text x="65.00" y="400" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#8b949e">1</text>
-<text x="213.15" y="400" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#8b949e">5</text>
-<text x="398.33" y="400" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#8b949e">10</text>
-<text x="583.52" y="400" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#8b949e">15</text>
-<text x="768.70" y="400" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#8b949e">20</text>
-<text x="953.89" y="400" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#8b949e">25</text>
-<text x="65" y="400" font-family="Arial,sans-serif" font-size="13" fill="#8b949e">This month: 108 contributions</text>
+<text x="207.86" y="400" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#8b949e">5</text>
+<text x="386.43" y="400" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#8b949e">10</text>
+<text x="565.00" y="400" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#8b949e">15</text>
+<text x="743.57" y="400" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#8b949e">20</text>
+<text x="922.14" y="400" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#8b949e">25</text>
+<text x="65" y="400" font-family="Arial,sans-serif" font-size="13" fill="#8b949e">This month: 110 contributions</text>
 </svg>
